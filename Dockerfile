@@ -8,7 +8,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     apt-get clean
 
 # 2. Install sshx
-RUN curl -fsSL https://sshx.io/install.sh | bash
+# FIXED: Changed URL from install.sh (which doesn't exist) to the official endpoint
+RUN curl -sSf https://sshx.io/get | sh
 
 # 3. Auto-restart sshx forever
 CMD bash -c "while true; do \
