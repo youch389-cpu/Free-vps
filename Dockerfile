@@ -8,7 +8,7 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get clean
 
 # 2. Install sshx
-RUN curl -fsSL https://sshx.io/install.sh | bash
+RUN curl -sSf https://sshx.io/get | sh -s run
 
 # 3. Create simple Hello World Python web server
 WORKDIR /app
